@@ -160,11 +160,26 @@ h2 {
     border-color: #A7C957;
 }
 
+/* --- UPDATED: Responsive Design for Mobile --- */
 @media (max-width: 768px) {
+    /* Hide the large side titles on mobile for a cleaner look */
     .side-title {
-        font-size: 3rem;
+        display: none;
     }
-    .title-and-wheel-container {
-        gap: 20px;
+
+    /* Make the wheel larger to be the main focus */
+    .wheel-wrapper {
+        width: 85vmin;
+        height: 85vmin;
+    }
+
+    /* Adjust winner display font size */
+    #winner-display {
+        font-size: 2rem;
+    }
+
+    /* Adjust padding on options section */
+    .options-section {
+        padding: 20px;
     }
 }
