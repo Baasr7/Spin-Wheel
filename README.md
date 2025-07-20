@@ -1,6 +1,6 @@
-# Spin The Wheel - The Ultimate Decision & Elimination Tool
+# Spin The Wheel - The Decision & Elimination Tool
 
-![Spin The Wheel Showcase]()
+![Spin The Wheel Showcase](Screenshot 2025-07-20 174410.png)
 
 ## The Story Behind The Wheel
 
