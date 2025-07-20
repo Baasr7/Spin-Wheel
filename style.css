@@ -1,0 +1,170 @@
+/* General Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+}
+
+/* Main container for the wheel section */
+.wheel-view {
+    min-height: 100vh; /* Takes up the full initial screen */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    gap: 15px;
+}
+
+/* NEW: Container for the titles and wheel */
+.title-and-wheel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px; /* Increased gap to push titles out */
+    width: 100%;
+}
+
+/* NEW: Styling for the side titles */
+.side-title {
+    font-size: 6rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+    flex-shrink: 0; /* Prevents titles from shrinking */
+}
+
+/* Container for the wheel and pointer */
+.wheel-wrapper {
+    position: relative;
+    /* UPDATED: Adjusted size to fit with titles */
+    width: 55vmin; 
+    height: 55vmin;
+    max-width: 500px;
+    max-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+/* The wheel itself (canvas) */
+#wheel {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 10px solid #fff;
+    transition: transform 8s cubic-bezier(0.1, 0.57, 0.1, 1);
+    box-sizing: border-box; 
+}
+
+/* The pointer that indicates the winning segment */
+.pointer {
+    position: absolute;
+    top: -10px;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent; 
+    border-right: 20px solid transparent; 
+    border-top: 40px solid #333; 
+    z-index: 10;
+    filter: drop-shadow(0px -2px 3px rgba(0,0,0,0.15));
+}
+
+/* The center circle of the wheel */
+.wheel-wrapper::after {
+    content: 'SPIN';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    width: 70px; 
+    height: 70px; 
+    background: #333;
+    border-radius: 50%;
+    border: 7px solid #fff;
+    z-index: 11;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    cursor: pointer; /* Indicates it's clickable */
+}
+
+/* Winner Display Styling */
+#winner-display {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #A7C957; /* Brighter green for contrast */
+    text-align: center;
+    padding: 8px 20px;
+    border-radius: 10px;
+    background: #1f1f1f;
+    border: 2px solid #333;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    visibility: hidden; 
+    min-height: 60px; /* Reserve space */
+}
+
+#winner-display.show {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+/* Container for the options input, now at the bottom */
+.options-section {
+    background-color: #111;
+    padding: 30px;
+    border-top: 2px solid #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.options-content {
+    width: 90%;
+    max-width: 500px;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #fff; /* White text */
+    font-weight: 600;
+}
+
+/* Text area for user to input options */
+#options-input {
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+    border: 2px solid #444;
+    border-radius: 10px;
+    background-color: #1f1f1f;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+#options-input:focus {
+    outline: none;
+    border-color: #A7C957;
+}
+
+@media (max-width: 768px) {
+    .side-title {
+        font-size: 3rem;
+    }
+    .title-and-wheel-container {
+        gap: 20px;
+    }
+}
